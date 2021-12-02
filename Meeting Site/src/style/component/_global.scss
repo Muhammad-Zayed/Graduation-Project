@@ -1,0 +1,28 @@
+//start global
+* {
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+//start container
+.container {
+    width: 90%;
+    margin: 0px auto;
+    
+}
+body {
+    font-family: Arial, Tahoma;
+    overflow: hidden;
+}
+
+//hide controlls for videos
+video::-webkit-media-controls {
+  display:none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}

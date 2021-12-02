@@ -1,0 +1,186 @@
+//start about
+.about {
+    height: 100vh;
+    position: relative;
+    .title{
+        position: absolute;
+        text-transform: uppercase;
+        font-size: 60px;
+        text-shadow: 5px 5px rgba(0,0,0,0.1);
+        top: 30px;
+        left: 150px;
+        @media (max-width: 992px) {
+            font-size: 45px;
+            text-shadow: 5px 5px rgba(255,255,255,0.18);
+            top: 80px;
+            left: 30%;
+            z-index: 1;
+            color: #fff;
+        }
+        @media (max-width: 400px) {
+            left: 29%;
+        }
+    }
+    .row {
+        display:flex;
+        height: 100vh;
+        .about_img_side {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 70%;
+            }
+            @media (max-width: 992px) {
+                display: none;
+            }
+        }
+        .about_content_side {
+            width: 50%;
+            background-color: $mainColor;
+            color: #ffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            @media (max-width: 992px) {
+                width: 100%;
+                height: 100vh;
+            }
+            .content {
+                z-index: 0;
+                position: relative;
+                p {
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin: 30px 0px;
+                    @media (max-width: 992px) {
+                        font-size: 21px;
+                    }
+                }
+                @media (max-width: 992px) {
+                    font-size: 18px;
+                    text-align: center;
+                }
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 700px;
+                height: 700px;
+                background: #fff;
+                position: absolute;
+                top: -150px;
+                right: -300px;
+                border-radius: 50%;
+                z-index: 0;
+                opacity: 0.07;
+            }
+        }
+    }
+}
+//end about
+
+
+//start team
+.team {
+    display: block;
+    min-height: 100vh;
+    padding: 50px 0px;
+    background-color: #f1f1f1;
+    .container {
+        .title {
+            display: block;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            font-size: 50px;
+            text-shadow: 5px 5px rgb(211, 211, 211);
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            flex-wrap: wrap;
+            .item {
+                width: 273px;
+                background-color: #ffffff;
+                border-radius: 15px;
+                text-align: center;
+                position: relative;
+                padding-top: 90px;
+                margin: 0px 20px;
+                margin-top: 60px;
+                @media (max-width: 992px) {
+                    margin: 36px 36px;
+                }
+                @media (max-width: 600px) {
+                    margin: 40px 0px;
+                    width: 100%;
+                }
+                .img {
+                    width: 130px;
+                    height: 130px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    border-radius: 50%;
+                    top: -60px;
+                    left: 70px;
+                    background-color: #f1f1f1;
+                    @media (max-width: 600px) {
+                        top: -60px;
+                        left: 36%;
+                    }
+                    @media (max-width: 400px) {
+                        top: -60px;
+                        left: 30%;
+                    }
+                    img {
+                        width: 75%;
+                        border-radius: 50%;
+                    }
+                }
+                .info {
+                    .name {
+                        text-transform: capitalize;
+                    }
+                    .jop{
+                        line-height: 1.8;
+                        color: #999;
+                        font-size: 18px;
+                        text-transform: capitalize;
+                    }
+                }
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    a {
+                        margin: 7px;
+                        img{
+                            width: 30px;
+                            height: 30px;
+                            transition: all 0.2s ease-in;
+                            &:hover {
+                                transform: scale(1.15);
+                            }
+                        }
+                    }
+                }
+                .email {
+                    background-color: $mainColor;
+                    color: #fff;
+                    padding: 20px;
+                    border-radius: 0px 0px 15px 15px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+} 
+//end team

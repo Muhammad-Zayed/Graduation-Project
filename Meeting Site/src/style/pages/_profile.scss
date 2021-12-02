@@ -1,0 +1,190 @@
+//start wrapper
+.profile_wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: $profilePgColor1;
+    //content_container
+    .content_container{
+        width: 80%;
+        height: 90vh;
+        background-color: $profilePgColor2;
+        border-radius: 20px;
+        padding: 0px;
+        @media (max-width: 600px) {
+            width: 100%;
+            height: 100vh;
+        }
+        //menu_side
+        .menu_side{
+            background-color: $profilePgColor3;
+            border-radius: 20px;
+            padding: 0px;
+            padding-top: 50px;
+            @media (max-width: 600px) {
+                display: none;
+            }
+            //aside title
+            .title{
+                //aside img
+                img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    display: block;
+                    margin: 10px auto;
+                }
+                h3 {
+                    text-align: center;
+                    color: #747474;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-top: 15px;
+                    text-transform: capitalize;
+                }
+            }
+            //nav bars
+            .navs {
+                margin-top: 50px;
+                a{
+                    display: block;
+                    text-align: center;
+                    font-size: 26px;
+                    font-weight: 100;
+                    color:#848484;
+                    margin: 20px;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        color:#c4c4c4;
+                    }
+                    &.logout{
+                        color:#C6C0C0;
+                        background-color: $profileRedColor;
+                        padding: 5px;
+                        width: 40%;
+                        border-radius: 5px;
+                        font-weight: 100;
+                        margin: auto ;
+                        font-size: 20px;
+                        &:hover{
+                            color:#ffffff;
+                        }
+                    }
+                }
+            }
+        }
+        //info side
+        .info_side{
+            background-color: $profilePgColor2; 
+            padding: 0px;
+            border-radius: 20px;
+            @media (max-width: 600px) {
+                width: 100%;
+            }
+            //start info container
+            .info_container {
+                width: 80%;
+                height: 80%;
+                @media (max-width: 600px) {
+                    width: 90%;
+                }
+                //start title
+                .title {
+                    color: #646464;
+                    font-size: 26px;
+                    font-weight: bold;
+                    text-transform: capitalize;
+                }
+                //start information
+                .info{
+                    background-color: $profilePgColor3;
+                    width: 100%;
+                    height: 100%;
+                    margin-top: 10px;
+                    border-radius: 10px;
+                    padding: 15px;
+                    //items
+                    .item {
+                        padding: 20px 0px;
+                        //item title
+                        .item_title{
+                            color:#A1A1A1;
+                            font-size: 21px;
+                            text-transform: capitalize;
+                        }
+                        //item text area
+                        textarea {
+                            background-color: transparent;
+                            border: none;
+                            outline: none;
+                            resize: none;
+                            &::selection{
+                                color:#777777;
+                                background-color: transparent;
+                            }
+                        }
+                        //item content
+                        .item_cont{
+                            color:#777777;
+                            font-size: 21px;
+                            word-break: break-all;
+                            //item input
+                            input{
+                                color:#777777;
+                                font-size: 21px;
+                                background-color: transparent;
+                                border: none;
+                                outline: none;
+                            }
+                            //show btn
+                            .show {
+                                background-color: transparent;
+                                font-size:17px;
+                                color: $profileBlueColor;
+                                border:none;
+                                text-transform: capitalize;
+                                cursor: pointer;
+                                outline: none;
+                            }
+                        }
+                    }
+                    //optin btns
+                    .option_btn {
+                        margin-left: 30px;
+                        margin-top: 15px;
+                        //btn
+                        button{
+                            margin-right: 10px;
+                            height: 30px;
+                            border-radius: 4px;
+                            font-size: 16px;
+                            border: none;
+                            cursor: pointer;
+                            transition: all 0.2s linear;
+                            outline: none;
+                            //start meeting btn
+                            &.start_meeting{
+                                background-color: $profileBlueColor;
+                                color: #E2E2E2;
+                                &:hover{
+                                    background-color: #0085cc;
+                                }
+                            }
+                            //copy invite btn
+                            &.copy_invite{
+                                color: #272727;
+                                span{
+                                    padding: 4px;
+                                }
+                                &:hover{
+                                    background-color: #c9c9c9;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

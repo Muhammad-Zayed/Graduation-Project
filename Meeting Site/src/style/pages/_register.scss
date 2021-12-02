@@ -1,0 +1,181 @@
+//image side 
+.image_side{
+    background-image: url('../images/register.jpg');
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    @media (max-width: 992px) {
+        display: none;
+    }
+    //overlay
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width:100%;
+        background-color: rgba($color: #000000, $alpha: 0.8);
+        //home btn
+        .home_btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            a {
+                text-decoration: none;
+                img{
+                    width: 55px;
+                    height: 55px;
+                }   
+            }
+        }
+        //overlay content
+        .content {
+            text-align: center;
+            color: #fff;
+            h2 {
+                font-size: 35px;
+                text-transform: capitalize;
+            }
+            ///login and signup page btn 
+            .login_page,
+            .signup-page {
+                width: 100px;
+                margin: 20px auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 35px;
+                border: none;
+                outline: none;
+                background-color: $mainColor;
+                color: #fff;
+                border-radius: 5px;
+                font-size: 16px;
+                text-transform: capitalize;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                text-decoration: none;
+                &:hover{
+                    background-color: #006ca7;
+                }
+            }
+        }
+    }
+}
+
+
+
+///form-side
+.form_side {
+    //form
+    form {
+        //from title
+        .title {
+            text-align: center;
+            margin: 30px 0px;
+            h2{
+                width: 100px;
+                margin: auto;
+                text-transform: capitalize;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 121%;
+                    left: 33px;
+                    background-color: #1689FC;
+                    height: 4px;
+                    width: 41px;
+                    border-radius: 20px;
+                }
+            }
+        }
+        //input group 
+        .input_group {
+            margin: 15px 0px ;
+            // input lable
+            .input_title{
+                padding: 5px 0px;
+                div {
+                    padding: 0px !important;
+                    .label{
+                        text-transform: uppercase;
+                    }
+                    //error messages
+                    .error_mess {
+                        text-align: right;
+                        color:#FF1D1D;
+                    }
+                }
+            }
+            //input container
+            .input {
+                position: relative;
+                //input
+                input {
+                    height: 35px;
+                    border-radius: 5px;
+                    border: 1px solid rgb(134, 134, 134);
+                    font-size: 18px;
+                    outline: none;
+                    color: #555;
+                }
+                //error icon
+                .error_icon {
+                    font-size: 20px;
+                    display: block;
+                    position: absolute;
+                    top: 6px;
+                    left: 90%;
+                    color: #27ae60;
+                    width: 30px;
+                    height: 30px;
+                    @media (max-width: 767.98px) { 
+                        left: 88%;
+
+                    }
+                }
+                &.active {
+                    input {
+                        border: 1px solid #FF1D1D;
+                    }
+                    .error_icon {
+                        color: #FF1D1D;
+                    }
+                }
+            }
+        }
+        //controls row
+        .controls {
+            padding: 0px 5px;
+            button {
+                height: 35px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                @media (max-width: 767.98px) { 
+                    margin-top: 10px;
+                }
+            }
+            .submit{
+                background: $mainColor;
+                color: #fff;
+                font-size: 16px;
+            }
+            .facebook_sign {
+                background-color: #0C85EE;
+                color: #fff;
+                font-size: 18px;
+            }
+            .google_sign {
+                background-color: #fff;
+                //box-shadow: 1px 1px 2px 2px #ccc;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                padding-top: 2px;
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+}

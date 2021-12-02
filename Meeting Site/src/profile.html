@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting</title>
+    <link rel="shortcut icon" href="./images/video-chat.png" type="image/x-icon">
+    <link rel="stylesheet" href="./plugins/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./style/profile.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <!-- start wrapper -->
+    <div class="profile_wrapper row justify-content-center align-items-center">
+        <!-- start content container -->
+        <div class="content_container row">
+            <!-- start menu side -->
+            <div class="menu_side col-3">
+                <!-- start title  -->
+                <div class="title">
+                    <img src="./images/mostafa.png" alt="">
+                    <h3 class="name">Mos Tafa</h3>
+                </div>
+                <!-- end title  -->
+
+                <!-- start navs -->
+                <div class="navs">
+                    <a href="#">home</a>
+                    <a href="#" id="join_meeting">join meeting</a>
+                    <a href="#" class="logout">logout</a>
+                </div>
+                <!-- end navs -->
+
+            </div>
+            <!-- end menu side -->
+
+            <!-- start info side -->
+            <div class="info_side col-9 row justify-content-center align-items-center g-0">
+                <!-- start info container -->
+                <div class="info_container">
+                    <h2 class="title">profile</h2>
+                    <div class="info">
+                        <div class="item row justify-content-center align-items-center g-0">
+                            <p class="item_title col-2">host</p>
+                            <p class="item_cont col-9">Mostafa Elgaml's Personal Meeting Room</p>
+                        </div>
+                        <div class="item row justify-content-center align-items-center g-0">
+                            <p class="item_title col-2">meeting ID</p>
+                            <p class="item_cont col-9"><input type="password" value="792 281 8925" disabled><button
+                                    class="show">show</button></p>
+                        </div>
+                        <div class="item row justify-content-center align-items-center g-0">
+                            <p class="item_title col-2">security</p>
+                            <p class="item_cont col-9"><input type="password" value="205574" disabled><button
+                                    class="show">show</button></p>
+                        </div>
+                        <div class="item row justify-content-center align-items-center g-0">
+                            <p class="item_title col-2">join URL</p>
+                            <textarea class="item_cont col-9" id="invite_code"
+                                disabled>https://us04web.zoom.us/j/7922818925?pwd=VWpoZTJOOWUrVjNWQmZUcDgrV3ltUT09</textarea>
+                        </div>
+                        <div class="item row justify-content-center align-items-center g-0">
+                            <p class="item_title col-2">email</p>
+                            <p class="item_cont col-9">elgaml.info@gmail.com</p>
+                        </div>
+                        <div class="item row justify-content-center align-items-center g-0">
+                            <p class="item_title col-2">password</p>
+                            <div class="item_cont col-9"><input type="password" value="01281145821" disabled><button
+                                    class="show">show</button></div>
+                        </div>
+                        <div class="option_btn row align-items-center g-0">
+                            <button class="start_meeting col-2">start</button>
+                            <button class="copy_invite col-3"><span><i class="fad fa-copy"></i></span>Copy Invite
+                                Code</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end info container ->
+            </div>
+            <!-- end info side -->
+            </div>
+            <!-- end content container -->
+
+        </div>
+        <!-- end wrapper -->
+
+
+        <!------------------ start join box ----------------->
+        <div class="join_box_container nonactive">
+            <div class="join_box">
+                <div class="title">
+                    <p>join meeting</p>
+                    <button class="close_btn"><i class="fad fa-times"></i></button>
+                </div>
+                <div class="join_form">
+                    <form action="">
+                        <div class="input_group">
+                            <label for="id">ID</label>
+                            <input type="text" name="id">
+                        </div>
+                        <div class="input_group">
+                            <label for="id">password</label>
+                            <input type="password" name="password">
+                        </div>
+                        <button type="submit" class="submit_btn">Join</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!------------------ end join box ----------------->
+
+        <!-- start laoding page -->
+        <div class="loading_container">
+            <div class="wrapper">
+                <div class="box-wrap">
+                    <div class="box one"></div>
+                    <div class="box two"></div>
+                    <div class="box three"></div>
+                    <div class="box four"></div>
+                    <div class="box five"></div>
+                    <div class="box six"></div>
+                </div>
+            </div>
+        </div>
+        <!-- start laoding page -->
+
+
+
+        <!------------ start alerts  -------------->
+        <div class="msg_container">
+            <div class="msg info-msg">
+                <i class="fas fa-info-circle"></i>
+                This is an info message.
+                <i class="hide_not fas fa-times"></i>
+            </div>
+
+            <div class="msg success-msg">
+                <i class="fas fa-check"></i>
+                This is a success message.
+                <i class="hide_not fas fa-times"></i>
+            </div>
+
+            <div class="msg warning-msg">
+                <i class="fas fa-exclamation-triangle"></i>
+                This is a warning message.
+                <i class="hide_not fas fa-times"></i>
+            </div>
+
+            <div class="msg error-msg">
+                <i class="fas fa-times-circle"></i>
+                This is a error message.
+                <i class="hide_not fas fa-times"></i>
+            </div>
+        </div>
+        <!------------ END alerts  ----------------->
+
+        <script src="./plugins/bootstrap.min.js"></script>
+        <script src="./js/profile.js"></script>
+        <script src="./js/loadingpage.js"></script>
+        <script src="./js/alert.js" defer></script>
+        <script src="./js/join-pop-up.js"></script>
+</body>
+
+</html>

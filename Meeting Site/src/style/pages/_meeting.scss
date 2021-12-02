@@ -1,0 +1,347 @@
+body {
+    background: #222222;
+    overflow-y: hidden;
+}
+//start grid box for all page element
+.grid_box {
+    display: grid;
+    height: 100vh;
+    color: #fff;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-areas:"header header header header header "
+                        "content content content content aside";
+    @media (max-width: 575.98px) { 
+        grid-template-areas:"header header header header header "
+                        "content content content content content";
+    }
+    // start meet header
+    .meet_head {
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
+        grid-area: header;
+        position: relative;
+        .room_name {
+            text-align: center;
+            display: block;
+            margin: auto;
+            color: rgb(161, 161, 161);
+        }
+        .metting_info_container {
+            .metting_info_btn {
+                position: absolute;
+                left: 15px;
+                bottom: 11%;
+                background: transparent;
+                color: #fff;
+                border: none;
+                font-size: 24px;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                &.active {
+                    color: $mainColor;
+                }
+            }
+            .metting_info {
+                width: 500px;
+                min-height: 250px;
+                position: absolute;
+                top: 103%;
+                left: 15px;
+                border: 1px solid #8a7878;
+                background-color: rgba($color: #000000, $alpha: 0.8);
+                border-radius: 10px;
+                padding: 30px ;
+                opacity: 0;
+                transition: all 0.2s ease-in-out;
+                z-index: 0;
+                @media (max-width: 575.98px) { 
+                    width: 100%;
+                    left: 0px;
+                }
+                &.active {
+                    opacity: 1;
+                    z-index: 999;
+                }
+                .item {
+                    p {
+                        word-break: break-all;
+                        &:first-of-type {
+                            color: #999;
+                        }
+                    }
+                }
+                .meeting_host {
+                    h3{
+                        @media (max-width: 575.98px) { 
+                            font-size: 20px !important;
+                        }
+                    }
+                }
+            }
+        }
+        //start toggle aside 
+        .toggle_aside {
+            position: absolute;
+            right: 15px;
+            bottom: 11%;
+            background: none;
+            border:none;
+            outline: none;
+            color: #fff;
+            font-size: 24px;
+            display: none;
+            &.active {
+                color: $mainColor;
+            }
+            @media (max-width: 575.98px) { 
+                display: block;
+            }
+        }
+    }
+    //start video and options content
+    .content {
+        grid-area: content;
+        position: relative;
+        overflow-y: scroll;
+        //start video grid
+        .contact_video_grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 24.5%);
+            
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: 575.98px) { 
+                grid-template-columns: repeat(auto-fill, 95%);
+            
+            }
+            //start contact video
+            .contact_video{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
+        }
+        //start share screen prev
+        .share_screen_prev {
+            width: 100%;
+            height: 100%;
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+        }
+        //start options 
+        .meet_options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            left: 40%;
+            transform: translateX(-50%);
+            @media (max-width: 575.98px) { 
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            // start option buttons
+            .option {
+                background-color: rgba(188, 188, 188,  0.6);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                color: #fff;
+                width: 45px;
+                height: 45px;
+                border: none;
+                border-radius: 50%;
+                font-size: 20px;
+                margin: 0px 5px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                i {
+                    width: 45px;
+                    height: 45px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                &:last-of-type {
+                    background-color: rgba(245, 31, 31, 0.86);
+                    color: #fff;
+                }
+                &.active {
+                    background-color: rgba(245, 31, 31, 0.86);
+                }
+            }
+        }
+    }
+    //start meeting aside (chats. users)
+    .meet_aside {
+        grid-area: aside;
+        background-color: #333333;
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        // start users
+        .users {
+            overflow-y: hidden;
+            h3 {
+                background-color:rgb(29, 29, 29);
+                text-align: center;
+                padding: 4px;
+                font-weight: lighter;
+                text-transform: capitalize;
+                color: #a8a8a8;
+                margin: 0px !important;
+                span {
+                    color: #fff;
+                    padding: 5px;
+                }
+            }
+            //start users container =
+            .users_container {
+                overflow-y: scroll ;
+                @media (max-width: 575.98px) { 
+                    z-index: 9999;
+                }
+                //start user items
+                .user_item {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 95%;
+                    padding: 10px;
+                    margin:  5px auto;
+                    background-color: rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 10px;
+                    //start users image
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                    //user name
+                    .user_name {
+                        word-wrap: none;
+                        text-transform: capitalize;
+                        color: #999;
+                        margin: 0 !important;
+                        
+                    }
+                    // user options
+                    .options {
+                        display: flex;
+                        justify-content: space-between;
+                        span {
+                            display: block;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        //start messages
+        .messages{
+            position: relative;
+            overflow: hidden;
+            h3 {
+                background-color:rgb(29, 29, 29);
+                text-align: center;
+                padding: 4px;
+                font-weight: lighter;
+                text-transform: capitalize;
+                color: #a8a8a8;
+                margin: 0px !important;
+                span {
+                    color: #fff;
+                    padding: 5px;
+                }
+            }
+            //start messages container
+            .messages_container {
+                overflow-y: scroll;
+                //messages  items
+                .message_item {
+                    width: 95%;
+                    padding: 10px;
+                    margin:  5px auto;
+                    background-color: rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 10px;
+                    //users name
+                    .user_name {
+                        text-transform: capitalize;
+                        color: #888;
+                        font-size: 14px;
+                    }
+                    //messages content
+                    .message_content {
+                        color: rgb(201, 201, 201);
+                        outline: 1.6 !important;
+                        margin: 0 !important;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            //start input  for  messages
+            .message_input {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba($color: #ffffff, $alpha: 0.1);
+                padding: 5px;
+                input {
+                    width: 100%;
+                    position: relative;
+                    height: 45px;
+                    border-radius: 40px;
+                    border: none;
+                    background-color: #222;
+                    padding-left: 10px;
+                    color: rgb(218, 218, 218);
+                    outline: none;
+                    font-size: 14px;
+                }
+                //send btn
+                button {
+                    position: absolute;
+                    right: 11px;
+                    top: 9.5px;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    border: none;
+                    background-color: $mainColor;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        @media (max-width: 575.98px) { 
+            //display: none;
+            position: fixed;
+            top: 44px;
+            left: 100%;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+            &.active {
+                left: 0px;
+            }
+        }
+    }
+}
